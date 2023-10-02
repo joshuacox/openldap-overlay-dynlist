@@ -1,0 +1,44 @@
+version: "3"
+networks:
+  openldapnet:
+    external: false
+services:
+  openldap:
+    image: bitnami/openldap:2.6.6
+    container_name: openldap
+    environment:
+      - LDAP_ADMIN_USERNAME=admin
+      - LDAP_ADMIN_PASSWORD=admin
+      - LDAP_USERS=customuser
+      - LDAP_PASSWORDS=custompassword
+      - LDAP_ROOT=dc=example,dc=net
+      - LDAP_ADMIN_DN=cn=admin,dc=example,dc=net
+      - LDAP_CUSTOM_SCHEMA_FILE=/schema/custom.ldif
+      - LDAP_CUSTOM_SCHEMA_DIR=/custom_schemas
+      - LDAP_EXTRA_SCHEMAS=cosine,dyngroup,inetorgperson,nis
+      - BITNAMI_DEBUG=true
+      #- LDAP_EXTRA_SCHEMAS=collective,corba,cosine,dsee,duaconf,dyngroup,inetorgperson,java,misc,namedobject,nis,openldap,pmi
+      #- LDAP_EXTRA_SCHEMAS=collective,corba,core,cosine,dsee,duaconf,dyngroup,inetorgperson,java,misc,msuser,namedobject,nis,openldap,pmi
+    restart: always
+    networks:
+      - openldapnet
+    ports:
+      - 389:1389
+      - 636:1636
+    volumes: 
+      - ./schema:/schema
+      - ./schemas:/schemas
+      - ./ldifs:/ldifs
+      - ./slaptest:/slaptest
+      - ./data:/bitnami/openldap
+
+  phpldapadmin:
+    ports:
+      - 80:80
+      - 443:443
+    container_name: phpldapadmin
+    networks:
+      - openldapnet
+    environment:
+      - PHPLDAPADMIN_LDAP_HOSTS=ldap://openldap:1389
+    image: osixia/phpldapadmin:0.9.0
