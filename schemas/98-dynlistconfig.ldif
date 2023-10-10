@@ -1,6 +1,7 @@
-dn: olcOverlay={0}dynlist,olcDatabase={-1}frontend,cn=config
+dn: olcOverlay=dynlist,olcDatabase={-1}frontend,cn=config
 objectClass: olcOverlayConfig
 objectClass: olcDynListConfig
-olcOverlay: {0}dynlist
-olcDynListAttrSet: {0}groupOfURLs memberURL member+memberOf@groupOfNames
+olcOverlay: dynlist
+olcDynListAttrSet: {0}groupOfURLs labeledURI member
+olcDynListAttrSet: {1}groupOfURLs memberURL memberOf
 

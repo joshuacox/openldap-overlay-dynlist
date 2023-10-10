@@ -1,0 +1,11 @@
+dn: olcOverlay=memberof,olcDatabase={2}mdb,cn=config
+objectClass: olcOverlayConfig
+objectClass: olcMemberOfConfig
+olcOverlay: memberof
+olcMemberOfDN: dc=example,dc=net
+olcMemberOfDangling: ignore
+olcMemberOfDanglingError: 80
+olcMemberOfRefInt: FALSE
+olcMemberOfGroupOC: groupOfNames 
+olcMemberOfMemberAD: member
+olcMemberOfMemberOfAD: memberOf 
