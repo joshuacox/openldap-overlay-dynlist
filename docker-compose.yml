@@ -13,6 +13,7 @@ services:
       - LDAP_USERS=customuser
       - LDAP_PASSWORDS=custompassword
       - LDAP_ROOT=dc=example,dc=net
+      - LDAP_LOGLEVEL=-1
       - LDAP_ADMIN_DN=cn=admin,dc=example,dc=net
       - LDAP_EXTRA_SCHEMAS=cosine,dyngroup,inetorgperson,nis
       - BITNAMI_DEBUG=true
@@ -25,7 +26,7 @@ services:
       #- LDAP_CUSTOM_SCHEMA_DIR=/custom_schemas
       #- LDAP_EXTRA_SCHEMAS=collective,corba,cosine,dsee,duaconf,dyngroup,inetorgperson,java,misc,namedobject,nis,openldap,pmi
       #- LDAP_EXTRA_SCHEMAS=collective,corba,core,cosine,dsee,duaconf,dyngroup,inetorgperson,java,misc,msuser,namedobject,nis,openldap,pmi
-    restart: always
+    restart: no
     networks:
       - openldapnet
     ports:
