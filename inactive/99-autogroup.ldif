@@ -1,0 +1,6 @@
+dn: olcOverlay=autogroup,olcDatabase={-1}frontend,cn=config
+objectClass: olcOverlayConfig
+objectClass: olcAutoGroupConfig
+olcOverlay: autogroup
+olcAutoGroupAttrSet: groupOfURLs memberURL member
+

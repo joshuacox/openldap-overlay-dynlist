@@ -3,5 +3,7 @@ cn: module
 objectClass: olcModuleList
 olcModulePath: /opt/bitnami/openldap/lib/openldap
 olcModuleLoad: dynlist
-olcModuleLoad: memberof
+olcModuleLoad: dyngroup
 olcModuleLoad: argon2
+#olcModuleLoad: autogroup
+#olcModuleLoad: memberof
