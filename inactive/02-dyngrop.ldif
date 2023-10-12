@@ -1,0 +1,4 @@
+dn: cn=allusers,ou=Groups,dc=example,dc=net
+cn: all
+objectClass: groupOfURLs
+labeledURI: ldap:///ou=people,dc=example,dc=net??one?(objectClass=inetOrgPerson)

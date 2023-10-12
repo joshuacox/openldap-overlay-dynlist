@@ -1,0 +1,11 @@
+dn: cn=Dynamic List,ou=Groups,dc=example,dc=net
+objectClass: groupOfURLs
+cn: Dynamic List
+memberURL: ldap:///ou=users,dc=example,dc=net??sub?(objectClass=inetOrgPerson)
+
+dn: cn=Dynamic Group,ou=Groups,dc=example,dc=net
+objectClass: groupOfURLs
+objectClass: dgIdentityAux
+cn: Dynamic Group
+memberURL: ldap:///ou=users,dc=example,dc=net??sub?(objectClass=inetOrgPerson)
+dgIdentity: cn=Group Proxy,ou=Services,dc=example,dc=com

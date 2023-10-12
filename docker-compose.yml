@@ -14,7 +14,7 @@ services:
       - LDAP_USERS=customuser
       - LDAP_PASSWORDS=custompassword
       - LDAP_ROOT=dc=example,dc=net
-      - LDAP_LOGLEVEL=-1
+      - LDAP_LOGLEVEL=32
       - LDAP_ADMIN_DN=cn=admin,dc=example,dc=net
       - LDAP_EXTRA_SCHEMAS=cosine,dyngroup,inetorgperson,nis
       - BITNAMI_DEBUG=true
@@ -34,9 +34,9 @@ services:
       - 389:1389
       - 636:1636
     volumes: 
-      #- ./schema:/schema
       - ./schemas:/schemas
-      #- ./ldifs:/ldifs
+      - ./ldifs:/ldifs
+      #- ./schema:/schema
       #- ./slaptest:/slaptest
       #- ./data:/bitnami/openldap
 

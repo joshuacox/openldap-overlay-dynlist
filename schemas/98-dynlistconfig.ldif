@@ -3,4 +3,8 @@ objectClass: olcOverlayConfig
 objectClass: olcDynListConfig
 olcOverlay: dynlist
 olcDynListAttrSet: groupOfURLs memberURL member+memberOf@groupOfNames
-#olcDynListAttrSet: groupOfURLs memberURL
+#olcDynListAttrSet: groupOfURLs memberURL memberOf
+#olcDynListAttrSet: groupOfURLs memberURL member+dgMemberOf
+#olcDynListAttrSet: groupOfURLs memberURL member
+#olcDynListAttrSet: groupOfURLs memberURL member
+#olcDynListAttrSet: groupOfURLs labeledURI member
