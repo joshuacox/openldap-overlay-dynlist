@@ -1,5 +1,6 @@
 #!/bin/bash
-# all of these are known to crash the slapd server
+# all of these were known to crash the slapd server
+# and no longer do
 set -eux
 #docker exec openldap ldapsearch -H ldap://localhost:1389 -LLL -x -s sub -b 'dc=example,dc=net' '(&(objectClass=inetOrgPerson)(memberof=cn=readers,ou=users,dc=example,dc=net))'
 docker exec openldap ldapsearch -H ldap://localhost:1389 -LLL -x -s sub -b 'dc=example,dc=net' 'cn=customuser' memberof
