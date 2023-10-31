@@ -4,7 +4,7 @@ networks:
     external: false
 services:
   openldap:
-    privileged: true
+    #privileged: true
     image: bitnami/openldap:2.6.6
     #image: bitnami/openldap:2.5.16
     #image: jonnos/openldap:test 
