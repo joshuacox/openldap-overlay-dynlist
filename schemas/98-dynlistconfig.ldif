@@ -1,4 +1,4 @@
-dn: olcOverlay=dynlist,olcDatabase={-1}frontend,cn=config
+dn: olcOverlay=dynlist,olcDatabase={2}mdb,cn=config
 objectClass: olcOverlayConfig
 objectClass: olcDynListConfig
 olcOverlay: dynlist

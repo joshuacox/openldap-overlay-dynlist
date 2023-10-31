@@ -4,6 +4,7 @@ networks:
     external: false
 services:
   openldap:
+    privileged: true
     image: bitnami/openldap:2.6.6
     #image: bitnami/openldap:2.5.16
     #image: jonnos/openldap:test 
@@ -14,7 +15,7 @@ services:
       - LDAP_USERS=customuser
       - LDAP_PASSWORDS=custompassword
       - LDAP_ROOT=dc=example,dc=net
-      - LDAP_LOGLEVEL=32
+      - LDAP_LOGLEVEL=256
       - LDAP_ADMIN_DN=cn=admin,dc=example,dc=net
       - LDAP_EXTRA_SCHEMAS=cosine,dyngroup,inetorgperson,nis
       - BITNAMI_DEBUG=true
