@@ -5,7 +5,7 @@ networks:
 services:
   openldap:
     #privileged: true
-    image: bitnami/openldap:2.6.6
+    image: bitnami/openldap:2.6.9
     #image: bitnami/openldap:2.5.16
     #image: jonnos/openldap:test 
     container_name: openldap
